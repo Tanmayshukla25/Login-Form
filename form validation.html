@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="form validation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="background-img">
+        <div class="formbox">
+            <h1>Login Form</h1>
+            <form>
+                <input type="text" placeholder="Enter Your FirstName" id="first"><br>
+                <input type="text" placeholder="Enter Your LastName" id="last"><br>
+                <input type="email" placeholder="Enter Your Email" id="email"><br>
+                <input type="password" placeholder="Enter Your Password" id="pass"><br>
+                <input type="password" placeholder="Enter Your  Confirm Password" id="confpass"><br>
+                <input type="Number" placeholder="Enter Your Mobile" id="phone"><br>
+                <button id="btn">Submit</button>
+
+            </form>
+        </div>
+    </div>
+    <script>
+        let first = document.getElementById("first");
+        let last = document.getElementById("last");
+        let email = document.getElementById("email");
+        let pass = document.getElementById("pass");
+        let confpass = document.getElementById("confpass");
+        let phone = document.getElementById("phone");
+        let btn = document.getElementById("btn");
+        let box = document.querySelectorAll("input");
+
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (first.value === "") {
+                alert("Please enter the First Name");
+            }
+            else if (last.value === "") {
+                alert("Please enter the  last Name");
+            }
+            else if (email.value === "") {
+                alert("Please enter the Email");
+            }
+            else if (pass.value === "") {
+                alert("Please enter the Password");
+            }
+            else if (confpass.value === "") {
+                alert("Please enter the confpassword");
+            }
+            else if (phone.value === "") {
+                alert("Please enter the phone");
+            }
+            else if (pass.value !== confpass.value) {
+                alert("Password are not same");
+            }
+            else if (pass.value.length < 6) {
+                alert("Please enter atleast 6 digit password ")
+            }
+            else if (phone.value.length < 10) {
+                alert("Please enter atleast 10 digit Number ")
+            }
+
+            else {
+                const userData = {
+            firstName: first.value,
+            lastName: last.value,
+            email: email.value,
+            password: pass.value,
+            phone: phone.value
+        };
+
+        localStorage.setItem("userData", JSON.stringify(userData));
+                alert("Form submit successfully")
+                box.forEach((input) => {
+                    input.value = ""
+                });
+            }
+            
+        });
+
+    </script>
+</body>
+
+</html>

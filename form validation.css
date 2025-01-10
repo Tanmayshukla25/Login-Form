@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins"
+}
+#background-img{
+    background-image: url("./form.avif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+   
+}
+.formbox{
+    background:linear-gradient(Blue,white,black);
+    width: 400px;
+   position: absolute;
+   border-radius: 20px;
+   top: 18%;
+   left: 38%;
+    text-align: center;
+    margin: auto;
+    animation: change 8s linear infinite;
+    animation-delay: 4s;
+    box-shadow: 4px 4px 4px  rgba(255, 255, 255, 0.816);
+}
+@keyframes change{
+    0%{
+    
+        background:linear-gradient(Blue,white,black);
+    }
+    25%{
+
+        background:linear-gradient(purple,white,black);
+    }
+    50%{
+
+        background:linear-gradient(green,white,black);
+    }
+    75%{
+
+        background:linear-gradient(skyblue,white,black);
+    }
+    100%{
+
+        background:linear-gradient(orange,white,black);
+    }
+}
+h1{
+    padding: 20px 0;
+    color: white;
+    text-decoration: underline black;
+}
+input{
+    width: 350px;
+    height: 40px;
+    padding: 10px 10px;
+    margin: 10px 25px;
+    font-size: 17px;
+  
+   
+}
+button{
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    border: unset;
+    border-radius: 10px;
+}
+button:hover{
+    opacity: 0.9;
+    background-color: orangered;
+}
